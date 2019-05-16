@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="greetingService"
+		class="com.globant.spring.GreetingService" init-method="init" lazy-init="true">
+		<constructor-arg value="Hello World"></constructor-arg>
+		<constructor-arg value="Hello Globant"></constructor-arg>
+	</bean>
+
+	<!-- <bean id="helloService" class="com.globant.spring.HelloService" > <property 
+		name="msg" value="hello Service..." ></property> </bean> -->
+
+	<bean id="helloService" class="com.globant.spring.HelloService">
+		<property name="msg">
+			<list>
+				<value>Hello</value>
+				<value>Hi</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="fooService" class="com.globant.spring.FooService">
+	</bean>
+	<bean id="student" class="com.globant.spring.Student" scope="prototype">
+	</bean>
+</beans>
