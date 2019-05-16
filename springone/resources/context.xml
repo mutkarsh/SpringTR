@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="greetingService"
-		class="com.globant.spring.GreetingService" init-method="init" lazy-init="true">
-		<constructor-arg value="Hello World"></constructor-arg>
-		<constructor-arg value="Hello Globant"></constructor-arg>
+		class="com.globant.spring.GreetingService" init-method="init"
+		lazy-init="true" c:msg="Hi" c:msg1=" There...">
+		<!-- <constructor-arg value="Hello World"></constructor-arg>
+		<constructor-arg value="Hello Globant"></constructor-arg> -->
 	</bean>
 
 	<!-- <bean id="helloService" class="com.globant.spring.HelloService" > <property 
@@ -24,6 +27,7 @@
 
 	<bean id="fooService" class="com.globant.spring.FooService">
 	</bean>
-	<bean id="student" class="com.globant.spring.Student" scope="prototype">
+	<bean id="student" class="com.globant.spring.Student"
+		scope="prototype" p:name="John">
 	</bean>
 </beans>

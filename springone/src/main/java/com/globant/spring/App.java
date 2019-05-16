@@ -23,10 +23,11 @@ public class App
         fs.print();
         
         Student ss = (Student) context.getBean("student");
-        System.out.println(ss);
+        System.out.println(ss+":"+ss.getName());
+        
 
         Student ss1 = (Student) context.getBean("student");
-        System.out.println(ss1);
+        System.out.println(ss1+":"+ss.getName());
         context.registerShutdownHook();
         context.close();
     }

@@ -2,7 +2,7 @@ package com.globant.spring;
 
 public class Student {
 	
-	private String name="John";
+	private String name;
 
 	public String getName() {
 		return name;
