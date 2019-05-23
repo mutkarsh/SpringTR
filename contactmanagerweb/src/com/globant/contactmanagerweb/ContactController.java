@@ -17,7 +17,7 @@ import com.globant.contactmanager.model.ContactModel;
 @Controller
 public class ContactController {
 
-	@RequestMapping(value = "/contacts", method = RequestMethod.GET)
+	@RequestMapping(value = "/show", method = RequestMethod.GET)
 	public String ShowContacts(Model model) throws java.io.IOException {
 
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(App.class);
@@ -26,7 +26,10 @@ public class ContactController {
 //		List<ContactModel> contact =facade.findALL();
 		System.out.println(contact.toString());
 		model.addAttribute("contact", contact);
+		context.close();
 		return "contacts";
+		
+		
 
 	}
 
